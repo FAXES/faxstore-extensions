@@ -1,4 +1,4 @@
-// This FaxStore extension was created by https://plutosworld.net if you have any suggestions, feel free to ping PlutoTheDev in FAXES Gaming! //
+// This FaxStore extension was created by ~~https://plutosworld.net~~ FAXES if you have any suggestions, feel free to ping PlutoTheDev in FAXES Gaming! //
 const products = {
    ["product-name"]: { // the product name you'll pass in your query
       version: "1.0.0" // The version that is the most up to date to check against.

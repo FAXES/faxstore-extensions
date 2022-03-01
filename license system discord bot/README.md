@@ -10,6 +10,7 @@
 > - https://discord.com/api/oauth2/authorize?client_id=CLIENTID&permissions=8&scope=bot%20applications.commands
 
 **Previews:**
+
 [![1](https://pluto.vodka/playdough/Y44Mll.png)]
 [![2](https://pluto.vodka/playdough/C4kPlq.png)]
 [![3](https://pluto.vodka/playdough/38V01M.png)]

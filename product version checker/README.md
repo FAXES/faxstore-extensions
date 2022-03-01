@@ -2,12 +2,12 @@
 
 ---
 
-> Installation for Faxstore
-> - Download the `versionChecker.js` and place in your faxstore directory.
-> - Edit your config for faxstore in the files and `versionChecker.js` to the extraFiles array near the bottom.
-> - Restart your FaxStore
+**Installation for Faxstore:**
+- Download the `versionChecker.js` and place in your faxstore directory.
+- Edit your config for faxstore in the files and `versionChecker.js` to the extraFiles array near the bottom.
+- Restart your FaxStore
 
-**Usage in JavaScript**
+**Usage in JavaScript:**
 ```js
 let package = require("./package.json");
 let version = String(package.version).replaceAll(".","");

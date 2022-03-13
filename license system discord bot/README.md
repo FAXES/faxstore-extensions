@@ -1,12 +1,9 @@
-## FaxStore - Fax License Discord Bot
-
----
+## FaxStore - License System Discord Bot
 
 **Installation:**
-- Download the `license-bot.js` and place in your faxstore directory.
-- Edit your config for faxstore in the files and `license-bot.js` to the extraFiles array near the bottom.
+- Download the `LicenseSystem Bot.js` and place in your faxstore extensions directory.
 - Restart your FaxStore
-- You'll need to invite your discord bot under the application.commands scope. Here is an example of an invite to do that.
+- You'll need to invite your discord bot under the `application.commands` scope. Here is an example of an invite to do that.
 > - https://discord.com/api/oauth2/authorize?client_id=CLIENTID&permissions=8&scope=bot%20applications.commands
 
 **Previews:**
@@ -20,3 +17,8 @@
 [![4](https://pluto.vodka/playdough/QMNbdF.png)]
 
 [![5](https://pluto.vodka/playdough/_sNpn9.png)]
+
+---
+
+**Creators:**
+- @braxtongpoll

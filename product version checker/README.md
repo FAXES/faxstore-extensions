@@ -1,24 +1,39 @@
-## FaxStore Product Version Checker
+## FaxStore - Product Version Checker API
 
----
-
-**Installation for Faxstore:**
-- Download the `versionChecker.js` and place in your faxstore directory.
-- Edit your config for faxstore in the files and `versionChecker.js` to the extraFiles array near the bottom.
-- Restart your FaxStore
+**Installation:**
+- Download the `Product Version Checker.js` file and place it into your FaxStore extensions folder.
+- Restart FaxStore. Once loaded a message will appear in the FaxStore console.
 
 **Usage in JavaScript:**
 ```js
-let package = require("./package.json");
-let version = String(package.version).replaceAll(".","");
-let product = package.name;
-let res = await axios({
-    method: 'get',
-    url: `https://yourdomainhere.com/productversioncheck/${version}/${product}`,
-    headers: {
-        "Accept": 'application/json, text/plain, */*',
-        'User-Agent': '*',
+const appVersion = '1.2.3';
+const productId = 12;
+const https = require('https');
+
+
+https.get(`/api/version/check?version=${encodeURIComponent(appVersion)}&product=${productId}`, (res) => {
+    res.on('data', (d) => {
+        if(d.same) {
+            console.log(`You're application is up to date!`);
+        } else {
+            console.log(`You're application is outdated`, `Version Changelog:`, d.release?.changelog);
+        }
+    });
+})
+
+/* Expected Output (JSON)
+{
+    same: true,
+    release: {
+        version: '1.2.3',
+        title: 'My Product Release 1.2.3',
+        changelog: 'This version fixes the error that John Doe identified.',
+        createdAt: '1641451685943'
     }
-});
-console.log(res.data)
+}
+*/
 ```
+
+**Creators:**
+- [PlutoTheDev](github.com/braxtongpoll)
+- [FAXES](github.com/faxes)

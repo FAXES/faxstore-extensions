@@ -1,6 +1,6 @@
 # Documentation Searcher
 
-This extension allows users to search FaxDocs for content and have results returned.
+This simple extension allows users to search FaxDocs for content and have results returned right to Discord via FaxStores bot.
 
 
 **Installation:**

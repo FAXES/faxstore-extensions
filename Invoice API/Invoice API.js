@@ -73,7 +73,7 @@ module.exports = async function(app, con, client) {
                         if(config.debugMode) console.log(`We were unable to send a message to channel Id ${defaultConfig.discordConfig.loggingChannelId}.`, e.stack)
                     };
                 };
-                return res.send('Invoice created successfully.');
+                return res.send(`Invoice created successfully. | ${config.domain}/invoice/${row.insertId}`);
             });
         });
     });

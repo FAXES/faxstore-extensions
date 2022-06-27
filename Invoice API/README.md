@@ -12,4 +12,4 @@ This is a simple POST request endpoint that will allow you to create invoices in
 ---
 
 # Credits
-- [@Hyperz](https://store.hyperz.net/discord) - *Phyiscal Programming.*
+- [@Hyperz](https://github.com/Itz-Hyperz)

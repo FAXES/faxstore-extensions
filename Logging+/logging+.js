@@ -84,7 +84,7 @@ faxstore.on('onStart', function (licenseKey, siteDomain) {
 
   const embed = new MessageEmbed()
     .setTitle(`Faxstore Started`)
-    .setDescription(`**License Key:** ||\`${licenseKey}\`||`)
+    .setDescription(`Faxstore Started`)
     .setTimestamp()
 
 

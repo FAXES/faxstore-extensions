@@ -32,7 +32,9 @@ module.exports = async function(app, con, client) {
             let createdAt = Date.now();
             let arrayThing = `[{"title": "${req?.body?.title}","url": "","description": "${req?.body?.description}","price": "${req?.body?.price}","productId": "","subId": ""}]`;
             arrayThing = arrayThing.replaceAll("'", "");
-            await con.query(`INSERT INTO invoices (userId, items, status, due, createdAt, username) VALUES ("${req.body.user}", '${arrayThing}', "Due", "${createdAt}", "${createdAt}", "${req?.body?.username}")`, async (err, row) => {
+            let invoicingUsername = await client.users.fetch(req?.body?.user)
+            invoicingUsername = invoicingUsername?.tag ?? null;
+            await con.query(`INSERT INTO invoices (userId, items, status, due, createdAt, username) VALUES ("${req.body.user}", '${arrayThing}', "Due", "${createdAt}", "${createdAt}", "${invoicingUsername}")`, async (err, row) => {
                 if(err && config.debugMode) console.log(err);
                 let user = await client.users.fetch(req.body.user);
                 if(!user) {

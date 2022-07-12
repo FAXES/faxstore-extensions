@@ -1,7 +1,7 @@
 const config = {
     bansBeforeBlock: 0, // How many bans a user can have before they get 
-    createAuditLogs: true,
-    logInConsole: false
+    createAuditLogs: true, // Create an audit log when a user gets banned via the Firewall
+    logInConsole: false // Log in the terminal when a user gets banned via the Firewall
 };
 
 const axios = require('axios');

@@ -1,4 +1,5 @@
 const config = {
+    bansBeforeBlock: 0, // How many bans a user can have before they get 
     createAuditLogs: true,
     logInConsole: false
 };
@@ -9,9 +10,11 @@ module.exports = async function(app, con, client, faxstore) {
         let request = await axios({
             method: 'get',
             url: `https://firewall.hyperz.net/api/checkuser/${user.userId}`
+        }).catch(function(error) {
+            return "failed";
         });
-        if(!request?.data) return;
-        if(request.data.length > 0) {
+        if(!request?.data || request == "failed") return;
+        if(request.data.length >= config.bansBeforeBlock) {
             let list = [];
             await request.data.forEach(ban => {
                 list.push(`${ban.database}`)

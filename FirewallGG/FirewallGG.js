@@ -25,7 +25,7 @@ module.exports = async function(app, con, client, faxstore) {
             if(config.logInConsole) {
                 console.log(`[FirewallGG] User ${user.userId} is actively banned in: ${list.join(', ')}.`);
             };
-            await con.query(`UPDATE users SET disabled=1, banned=1, staffnotes=staffnotes+" [FirewallGG] User ${user.userId} is actively banned in: ${list.join(', ')}." WHERE userId=${user.userId}`, async function(err, row) {
+            await con.query(`UPDATE users SET disabled=1, banned=1, staffnotes=staffnotes+" [FirewallGG] User ${user.userId} is actively banned in: ${list.join(', ')}." WHERE userId="${user.userId}"`, async function(err, row) {
                 if(err) throw err;
             });
         };

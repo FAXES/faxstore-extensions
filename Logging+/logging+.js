@@ -7,6 +7,7 @@ let storeDomain = originalConfig.siteInformation.domain
 
 module.exports = async function (app, connection, bot, faxstore, client) {
   let logchan = bot.channels.cache.get(originalConfig.discordConfig.loggingChannelId);
+
 faxstore.on('login', function (userObject, DbUserResults) {
 
   const date = Date.now();
@@ -251,14 +252,19 @@ faxstore.on('userAccountStaffNoteEdited', function (staffUserId, user) {
 faxstore.on('createCheckout', function (userId, cart, total, promoCode, paymentType) {
   const date = Date.now();
 
+  let promo;
 
-
+  if(promoCode == ' ,') { 
+    promo = 'No Promo Code Used'
+  } else {
+    promo = promoCode
+  }
 
   const embed = new MessageEmbed()
     .setTitle(`Checkout Created`)
     .setDescription(`**User:** <@${userId.id}> | ${userId.id}
     **Total:** \`${total}\`
-    **Promocode Used:** \` ${promoCode}\`
+    **Promocode Used:** \` ${promo}\`
     **Payment Method:** \`${paymentType}\`
     `)
     .setTimestamp()

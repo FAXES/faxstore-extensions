@@ -11,6 +11,6 @@ This is for FaxStore. find more details on FaxStore below.
 ---
 
 - Link: https://faxes.zone/store/faxstore
-- Discord: discord.gg/faxes
+- Discord: https://discord.gg/faxes
 - My site: https://faxes.zone
 - Terms of Service: https://faxes.zone/tos

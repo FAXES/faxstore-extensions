@@ -10,3 +10,7 @@ This is a simple FaxStore extension that uses [FaxStore Events](https://docs.fax
 ## Credits
 
 [@Shawn E.](https://github.com/Shawn-E) - Actual Programming
+
+## Preview
+
+![preview](https://cdn.shawnengmann.com/shawn/rkEfAd.png)

@@ -10,6 +10,7 @@ This is a simple FaxStore extension that uses [FaxStore Events](https://docs.fax
 ## Credits
 
 [@Shawn E.](https://github.com/Shawn-E) - Actual Programming
+
 [@FAXES](https://faxes.zone) - Inspiration For The Extenion And Embed Design
 
 ## Preview

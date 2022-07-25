@@ -28,14 +28,15 @@ module.exports = async function(app, con, client, faxstore) {
             .setThumbnail(`https://store.shawnengmann.com/${storeItem.featureImage}`)
             .setTitle(`${release.version} - ${release.title}`)
             .setDescription(reDesc)
-            .setURL(`${ogConfig.siteInformation.domain}/releases/${releaseId}`)
+            .setURL(`${ogConfig.siteInformation.domain}/releases/${storeItem.id}`)
+
 
             let row = new MessageActionRow()
             .addComponents(
                 new MessageButton()
                     .setLabel(`View Release`)
                     .setStyle("LINK")
-                    .setURL(`${ogConfig.siteInformation.domain}/releases/${releaseId}`)
+                    .setURL(`${ogConfig.siteInformation.domain}/releases/${storeItem.id}`)
             )
 
             chan.send({ embeds: [embed], components: [row] });

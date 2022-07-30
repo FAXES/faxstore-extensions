@@ -5,7 +5,7 @@ const extension_config = {
 };
 
 
-const { Collection, MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");const commands = new Collection();const events = new Collection();const buttons = new Collection();const contextMenus = new Collection();const config = require("./config.json");
+const { Collection, MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");const commands = new Collection();const events = new Collection();const buttons = new Collection();const contextMenus = new Collection();const config = require("../config.json");
 let characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '0', '2', '3', '4', '5', '6', '7', '8', '9', '-', '_']
 module.exports = function(app, connection, client, faxstore) {
     // Events

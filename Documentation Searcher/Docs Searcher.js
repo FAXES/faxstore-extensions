@@ -3,21 +3,25 @@ const axios = require('axios');
 const Discord = require('discord.js')
 
 const docsConfig = {
-    docsDomain: 'docs.faxes.zone'
+    docsDomain: 'docs.xolify.store'
 }
 
 
-module.exports = async function(app, connection, bot, faxstore) {
-    bot.on('bootFaxStoreBot', async function(settings) {
-        const docsCmd = {
-            name: "docs",
+module.exports = async function(app, connection, bot, client, faxstore) {
+   
+        let commands = [
+            {
+                name: "docs",
                 description: `Search documentation.`,
                 options: [
                     {name: "query", description: "Search query", type: "STRING", required: true}
                 ]
-        };
-        if(!bot.application) await bot.application.fetch();
-        bot.application.commands.create(docsCmd, config.discordConfig.guildId).catch(function(err) {console.log(err)});
+            }
+        ]
+        commands.forEach(function(command) {
+            bot.application.commands.create(command, config.discordConfig.guildId).catch(function(err) {console.log(err)});
+        })
+
         bot.on("interactionCreate", async function(interaction) {
             if(interaction.commandName == "docs") {
                 let query = interaction.options.get("query")?.value;
@@ -45,7 +49,7 @@ module.exports = async function(app, connection, bot, faxstore) {
                     
                     const embed = new Discord.MessageEmbed()
                     .setColor('#1b4a6f')
-                    .setAuthor(`Documentation seach results:`)
+                    .setAuthor({ name: `Documentation seach results:` })
                     .setTitle(num1.title)
                     .setURL(num1.link)
                     .setDescription(`${desc}`)
@@ -56,5 +60,4 @@ module.exports = async function(app, connection, bot, faxstore) {
                 };
             };
         });
-    });
-}
+    }

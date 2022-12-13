@@ -18,7 +18,7 @@ module.exports = async function(app, connection, bot, faxstore) {
         ]
         bot.application.commands.create(commands[0], config.discordConfig.guildId).catch(function(err) {console.log(err)});
         bot.on("interactionCreate", async function(interaction) {
-            if(interaction.commandName == "docs") {
+            if(interaction.commandName === commands[0].name) { // could also do commands[0]["name"] but either way works...
                 let query = interaction.options.get("query")?.value;
                 if(query) {
                     let resp = await axios.get(`https://${docsConfig.docsDomain}/api/search?q=${encodeURIComponent(query)}`);

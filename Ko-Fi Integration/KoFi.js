@@ -3,10 +3,6 @@ const config = {
     verificationToken: "" // Your Ko-Fi API Advanced Verification Token https://ko-fi.com/manage/webhooks?src=sidemenu
 };
 
-// DONT TOUCH THIS CODE!
-// DONT TOUCH THIS CODE!
-// DONT TOUCH THIS CODE!
-
 const discord = require('discord.js');
 const webhook = new discord.WebhookClient({ url: config.webhookURL });
 module.exports = async function(app) {

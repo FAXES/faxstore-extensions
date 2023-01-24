@@ -10,7 +10,7 @@ module.exports = async function(app, con, client, faxstore) {
         if(config.bypassUserIds.includes(DbUserResults.userId)) return;
         let request = await axios({
             method: 'get',
-            url: `https://firewall.hyperz.net/api/checkuser/${DbUserResults.userId}`
+            url: `https://firewall.bosssoftware.net/api/checkuser/${DbUserResults.userId}`
         }).catch(function(error) {
             return "failed";
         });

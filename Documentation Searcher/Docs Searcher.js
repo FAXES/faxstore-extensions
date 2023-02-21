@@ -3,7 +3,7 @@ const axios = require('axios');
 const Discord = require('discord.js')
 
 const docsConfig = {
-    docsDomain: 'docs.faxes.zone'
+    docsDomain: 'docs.weblutions.com'
 }
 
 module.exports = async function(app, connection, bot, faxstore) {
@@ -16,6 +16,14 @@ module.exports = async function(app, connection, bot, faxstore) {
                 ]
             }
         ]
+        
+        faxstore.registerExtension({
+            name: 'Documentation Searcher',
+            description: 'A simple extensio which can make searches on a FaxDocs documentation website.',
+            version: '1.0.1',
+            author: 'FAXES',
+        }, __filename);
+        
         bot.application.commands.create(commands[0], config.discordConfig.guildId).catch(function(err) {console.log(err)});
         bot.on("interactionCreate", async function(interaction) {
             if(interaction.commandName === commands[0].name) { // could also do commands[0]["name"] but either way works...

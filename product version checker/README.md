@@ -34,6 +34,9 @@ https.get(`/api/version/check?version=${encodeURIComponent(appVersion)}&product=
 */
 ```
 
+#### Changes
+- `1.0.1`, added new standard for registering extensions, removed old API call.
+
 **Creators:**
 - [PlutoTheDev](github.com/braxtongpoll)
 - [FAXES](github.com/faxes)

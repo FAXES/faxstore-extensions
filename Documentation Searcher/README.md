@@ -9,5 +9,8 @@ This simple extension allows users to search FaxDocs for content and have result
 
 ---
 
+### Changes
+- `1.0.1`, added function to register the extension, changed example domain to be weblutions.com
+
 **Creators:**
 - [FAXES](github.com/faxes)

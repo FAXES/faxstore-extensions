@@ -6,20 +6,12 @@ const products = {
 }
 
 module.exports = function(app, connection, client, faxstore) {
-	// This is the old call, it's been left here for those that haven't fully updated their applications.
-	app.get("/productversioncheck/:version/:product", function(req, res) {
-		let version = req.params.version;
-		let product = req.params.product;
-		if (products[product]) {
-			if (version == products[product].version.replaceAll(".","")) {
-				res.send(true);
-			} else {
-				res.send(`Product is outdated, newest version is ${products[product].version}`);
-			}
-		} else {
-			res.send(true);
-		}
-	});
+	faxstore.registerExtension({
+	    name: 'Version Checker API',
+	    description: 'This extension adds an API endpoint to allow you to check for the latest version of a product - ',
+	    version: '1.0.1',
+	    author: 'FAXES',
+	}, __filename);
 
 	app.get("/api/version/check", function(req, res) {
 		let appVersion = decodeURIComponent(req.query.version).replaceAll("'","''");

@@ -1,3 +1,6 @@
+> # NOTICE
+> Since the release of the Official FaxStore API we recommend the usage of that over this type of extension as it provides security for future use and won't break.
+
 # Invoice API
 This is a simple POST request endpoint that will allow you to create invoices inside of FaxStore externally. This could be used with Discord bots, other websites, applications, and much more!
 

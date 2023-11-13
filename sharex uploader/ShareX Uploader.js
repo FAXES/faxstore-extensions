@@ -11,7 +11,16 @@ makeUniqueSet = function(length) {
     var result = '';var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';var charactersLength = characters.length;
     for( var i = 0; i < length; i++ ) {result += characters.charAt(Math.floor(Math.random() * charactersLength));}return result;
 }
-module.exports = function(app) {
+module.exports = function(app, faxstore) {
+    faxstore.registerExtension({
+        name: 'ShareX Uploader',
+        description: 'Upload files to your FaxStore via ShareX.',
+        icon: 'https://weblutions.com/assets/logo.png',
+        config: docsConfig,
+        version: '1.0.0',
+        author: 'FAXES',
+        url: 'https://github.com/FAXES/faxstore-extensions/tree/main/sharex%20uploader',
+    }, __filename);
     setTimeout(() => {console.log(`ShareX file uploader started.`);}, 800);
     app.get('/i/:item', async function (req, res) {
         let item = req.params.item;

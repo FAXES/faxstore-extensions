@@ -6,6 +6,15 @@ const config = {
 
 const axios = require('axios');
 module.exports = async function(app, con, client, faxstore) {
+    faxstore.registerExtension({
+        name: 'FirewallGG',
+        description: 'Protect your FaxStore from unwanted users.',
+        icon: 'https://weblutions.com/assets/logo.png',
+        config: config,
+        version: '1.0.0',
+        author: 'HYPERZ',
+        url: 'https://github.com/FAXES/faxstore-extensions/tree/main/FirewallGG',
+    }, __filename);
     faxstore.on('login', async function(userObject, DbUserResults) {
         if(config.bypassUserIds.includes(DbUserResults.userId)) return;
         let request = await axios({

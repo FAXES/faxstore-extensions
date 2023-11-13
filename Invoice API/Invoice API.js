@@ -12,6 +12,15 @@ const express = require("express");
 const Discord = require('discord.js');
 const defaultConfig = require('../config.json');
 module.exports = async function(app, con, client) {
+    faxstore.registerExtension({
+        name: 'Unofficial Invoice API',
+        description: 'An Unoffical FaxStore Invoice API.',
+        icon: 'https://weblutions.com/assets/logo.png',
+        config: config,
+        version: '1.0.0',
+        author: 'Hyperz',
+        url: 'https://github.com/FAXES/faxstore-extensions/tree/main/Invoice%20API',
+    }, __filename);
     app.use(bodyParser.urlencoded({ extended: true }))
     app.use(express.json());
     app.post('/extensions/invoiceApi/create', async function (req, res) {

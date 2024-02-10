@@ -5,7 +5,16 @@ const config = {
 
 const discord = require('discord.js');
 const webhook = new discord.WebhookClient({ url: config.webhookURL });
-module.exports = async function(app) {
+module.exports = async function(app, faxstore) {
+    faxstore.registerExtension({
+        name: 'Ko-Fi Integration',
+        description: 'Integrate your Ko-Fi with FaxStore.',
+        icon: 'https://weblutions.com/assets/logo.png',
+        config: docsConfig,
+        version: '1.0.0',
+        author: 'Hypzerz',
+        url: 'https://github.com/FAXES/faxstore-extensions/tree/main/Ko-Fi%20Integration',
+    }, __filename);
     app.post('/api/kofi', async function(req, res) {
         let data = await JSON.parse(req.body.data);
         if(data.verification_token !== config.verificationToken) return;
